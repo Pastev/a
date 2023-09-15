@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Checkout') {
             steps {
+                scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
                 git branch: 'main', url: 'https://github.com/spring-petclinic/spring-framework-petclinic.git'
             }
         }
         stage('Build') {
             steps {
-                scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
                 sh "mvn clean verify"
             }
             post {
