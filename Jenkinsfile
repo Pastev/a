@@ -5,10 +5,6 @@ pipeline {
         maven "maven-3"
     }
 
-    triggers {
-        cron('* * * * *')
-    }
-
     stages {
         stage('Clean') {
             steps {
@@ -17,7 +13,6 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                // scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
                 git branch: 'main', url: 'https://github.com/spring-petclinic/spring-framework-petclinic.git'
             }
         }
