@@ -1,10 +1,5 @@
 pipeline {
-     agent {
-            docker {
-                image 'maven:3.8.1-adoptopenjdk-11'
-                args '-v /root/.m2:/root/.m2 -v "$pwd":/usr/src/app -w /usr/src/app'
-            }
-        }
+    agent any
 
     tools {
         maven "maven-3"
@@ -23,7 +18,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "mvn clean spring-boot:build-image"
+
+                sh "mvn clean verify"
+
             }
             post {
                 success {
