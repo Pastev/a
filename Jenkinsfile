@@ -13,8 +13,8 @@ pipeline {
         stage('Test') {
             agent {
                 dockerfile {
-                 filename             'Dockerfile'
-                    dir                  'docker-pipeline'
+                 filename             'Dockerfile.build'
+                    dir                  'szkolenie-cicd-jenkins-gitlab/docker-pipeline'
                     args                 '-v /tmp:/tmp'
                     }
             }
