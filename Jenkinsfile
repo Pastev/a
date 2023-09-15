@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
 
-                sh "mvn clean verify"
+                sh "mvn clean spring-boot:build-image"
 
             }
             post {
