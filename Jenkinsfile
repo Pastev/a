@@ -17,9 +17,9 @@ pipeline {
             }
         }
         stage('Build') {
-            when {
-                 not { changelog '^.*[skip ci].*$'}
-            }
+            // when {
+            //      not { changelog '^.*[skip ci].*$'}
+            // }
             steps {
                 sh "mvn clean verify"
             }
