@@ -16,7 +16,7 @@ pipeline {
             //}
             steps {
                 sh 'cd ..'
-                sh 'pwd'
+                sh 'ls'
                 sh 'echo Hello work'
             }
         }
