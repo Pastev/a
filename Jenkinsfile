@@ -11,15 +11,15 @@ pipeline {
                 }
         }
         stage('Test') {
-            agent {
-                dockerfile {
-                 filename             'Dockerfile.build'
-                    dir                  'szkolenie-cicd-jenkins-gitlab/docker-pipeline'
-                    args                 '-v /tmp:/tmp'
-                    }
-            }
+            // agent {
+            //     dockerfile {
+            //      filename             'Dockerfile.build'
+            //         dir                  'szkolenie-cicd-jenkins-gitlab/docker-pipeline'
+            //         args                 '-v /tmp:/tmp'
+            //         }
+            // }
             steps {
-                // sh 'cd ..'
+                sh 'cd workspace'
                 sh 'ls'
                 sh 'echo Hello work'
             }
