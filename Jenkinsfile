@@ -19,7 +19,7 @@ pipeline {
             //         }
             // }
             steps {
-                dir("${env.WORKSPACE}/build-pipeline"){
+                dir("${env.WORKSPACE}/docker-pipeline"){
                     sh "pwd"
                     sh 'ls -al'
                 }
