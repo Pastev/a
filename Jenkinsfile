@@ -5,7 +5,7 @@ pipeline {
                 agent any
                 steps {
                     git(
-                        url: 'https://github.com/rechandler12/szkolenie-cicd-jenkins-gitlab/blob/main/docker-pipeline/Dockerfile',
+                        url: 'https://github.com/rechandler12/szkolenie-cicd-jenkins-gitlab/',
                         branch: "main"
                     )
                 }
