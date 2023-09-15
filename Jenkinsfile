@@ -17,9 +17,9 @@ pipeline {
             }
         }
         stage('Build') {
-            // when {
-            //      not { changelog '^.*[skip ci].*$'}
-            // }
+            steps {
+                scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
+            }
             steps {
                 sh "mvn clean verify"
             }
