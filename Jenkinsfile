@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Build') {
             when {
-                expression { COMMIT_NAME ==~ /([ci skip])/ }
+                 not { changelog '^.*[skip ci].*$'}
             }
             steps {
                 sh "mvn clean verify"
