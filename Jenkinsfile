@@ -19,8 +19,11 @@ pipeline {
             //         }
             // }
             steps {
-                sh 'cd ..'
-                sh 'ls -al'
+                dir("${env.WORKSPACE}/build-pipeline"){
+                    sh "pwd"
+                    sh 'ls -al'
+                }
+
 
             }
         }
