@@ -19,9 +19,9 @@ pipeline {
             //         }
             // }
             steps {
-                sh 'cd workspace'
-                sh 'ls'
-                sh 'echo Hello work'
+
+                sh 'ls -al'
+
             }
         }
     }
