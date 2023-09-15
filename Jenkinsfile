@@ -21,6 +21,7 @@ pipeline {
             steps {
 
                 sh "mvn clean verify"
+
             }
             post {
                 success {
