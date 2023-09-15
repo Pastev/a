@@ -18,9 +18,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-
+                args '-v /root/.m2:/root/.m2 -v "$pwd":/usr/src/app -w /usr/src/app'
                 sh "mvn clean spring-boot:build-image"
-
             }
             post {
                 success {
