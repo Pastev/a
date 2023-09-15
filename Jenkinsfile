@@ -8,6 +8,7 @@ pipeline {
                         url: 'https://github.com/rechandler12/szkolenie-cicd-jenkins-gitlab/blob/main/docker-pipeline/Dockerfile',
                         branch: "main"
                     )
+        }
         stage('Test') {
             steps {
             sh 'echo Hello work'
