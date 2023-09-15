@@ -5,6 +5,10 @@ pipeline {
         maven "maven-3"
     }
 
+    triggers {
+        cron('* * * * *')
+    }
+
     stages {
         stage('Clean') {
             steps {
