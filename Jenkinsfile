@@ -11,9 +11,13 @@ pipeline {
                 }
         }
         stage('Test') {
-            //agent {
-            //    dockerfile true
-            //}
+            agent {
+                dockerfile {
+                 filename             'Dockerfile'
+                    dir                  'docker-pipeline'
+                    args                 '-v /tmp:/tmp'
+                    }
+            }
             steps {
                 // sh 'cd ..'
                 sh 'ls'
