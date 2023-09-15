@@ -15,7 +15,7 @@ pipeline {
             //    dockerfile true
             //}
             steps {
-                sh 'cd ..'
+                // sh 'cd ..'
                 sh 'ls'
                 sh 'echo Hello work'
             }
