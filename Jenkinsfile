@@ -25,7 +25,6 @@ pipeline {
             post {
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
-                    slackSend channel: 'jenkins-przemek-piasta', message: "${env.BUILD_TAG} i ${env.BUILD_URL}"
                 }
             }
         }
