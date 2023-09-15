@@ -20,8 +20,12 @@ pipeline {
             // }
             steps {
                 dir("${env.WORKSPACE}/docker-pipeline"){
-                    sh "pwd"
-                    sh 'ls -al'
+                    // sh "pwd"
+                    // sh 'ls -al'
+                    dockerfile {
+                        filename             'Dockerfile'
+                        args                 '-v /tmp:/tmp'
+                    }
                 }
 
 
